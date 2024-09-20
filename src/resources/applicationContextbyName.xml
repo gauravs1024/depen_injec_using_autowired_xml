@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Autowired by using the type "byName" -->
+    <bean class="bean.Address" id="address">   <!--for using by type the variable name should be same as id of -->
+    <property name="houseno" value="2334"></property>
+    <property name="city" value="ghaziabad"></property>    
+    <property name="pincode" value="110001"></property>
+    </bean>
+    
+    
+     <bean class="bean.Student" id="studId" autowire="byName">  <!--for using the "byName" type the variable name of "Address" class that is address should be same with id name of using class -->
+    <property name="rollno" value="2102"></property>
+    <property name="name" value="AMit"></property>    
+    </bean>
+
+</beans>

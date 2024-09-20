@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Autowired by using the type "byType" -->
+    <!--when more than one bean object is created with same type then...-->
+    <bean class="bean.Address" id="addrId" autowire-candidate="false">
+    <constructor-arg value="amritsar"></constructor-arg>
+    <constructor-arg value="123213"></constructor-arg>
+    <constructor-arg value="2929292"></constructor-arg>
+    </bean>
+    
+     <bean class="bean.Address" id="addrId2" > <!--the  autowire-candidate="false" attribute is used when more than one object of same type is present-->
+    <constructor-arg value="Banglore"></constructor-arg>
+    <constructor-arg value="9889"></constructor-arg>
+    <constructor-arg value="1334"></constructor-arg>
+    </bean>
+    
+    
+    <bean class="bean.Student" id="studId" autowire="constructor">  <!--for using the "byType" type the  data type of the class should be same-->
+     <constructor-arg value="121" index="0"></constructor-arg>
+    <constructor-arg value="Rohit" index="1"></constructor-arg>
+
+    </bean>
+
+</beans>
